@@ -71,6 +71,7 @@ class Resume extends React.Component {
                   zIndex: 0}}></div>
                 <div style={{backgroundColor: 'rgba(192, 192, 192, 1.0)',
                   height: '20%', 
+                  position: 'relative',
                   width: '50%', 
                   margin: '5% 5%',
                   zIndex: 1}}>
