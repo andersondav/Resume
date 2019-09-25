@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { PDFExport } from '@progress/kendo-react-pdf';
 import myInfo from './myInfo'
+import NameHeading from './Components/NameHeading'
 
 class Resume extends React.Component {
 
@@ -37,12 +38,11 @@ class Resume extends React.Component {
     let email;
 
     if (!this.state.showLinks) {
-      email = <span>{this.state.email}</span>
+        email = <span>{this.state.email}</span>
     }
     else {
-      email = <a href={`mailto:david25@purdue.edu`}>{this.state.email}</a>
+        email = <a href={`mailto:david25@purdue.edu`}>{this.state.email}</a>
     }
-
     return (
     <div>
       <button onClick={this.exportPDF}>Download</button>
@@ -53,39 +53,7 @@ class Resume extends React.Component {
         subject=""
         keywords=""
         ref={(r) => this.resume = r}>
-          <div style={{
-              height: 792,
-              width: 612,
-              padding: 'none',
-              position: 'relative',
-              backgroundColor: 'white',
-              boxShadow: '5px 5px 5px black',
-              margin: 'auto',
-              overflowX: 'hidden',
-              overflowY: 'hidden'}}>
-                <div style={{backgroundColor: 'rgba(0, 0, 255, 0.1)',
-                  position: 'absolute', 
-                  height: '20%', 
-                  width: '50%', 
-                  margin: '6% 6%',
-                  zIndex: 0}}></div>
-                <div style={{backgroundColor: 'rgba(192, 192, 192, 1.0)',
-                  height: '20%', 
-                  position: 'relative',
-                  width: '50%', 
-                  margin: '5% 5%',
-                  zIndex: 1}}>
-                    <div style={{fontFamily: 'Cambria',  
-                        padding: '5% 5%'}}>
-                      <h1 style={{ margin: '0 0',
-                        padding: '0 0',
-                        fontSize: '30px', 
-                        fontWeight: 'bold'}}>{this.state.name}</h1>
-                        Phone #: {this.state.phoneNum} <br/>
-                        Email Address: {email}
-                    </div>
-                </div>
-          </div>
+          <NameHeading email={email}/>
       </PDFExport>
     </div>
       
