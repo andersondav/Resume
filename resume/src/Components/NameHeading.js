@@ -6,6 +6,7 @@ import canvg from 'canvg'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {styles} from '../styles'
 
 class NameHeading extends React.Component {
     constructor(props) {
@@ -56,40 +57,41 @@ class NameHeading extends React.Component {
     render() {
       return (
         <div>
-        <div style={{backgroundColor: 'rgba(0, 0, 255, 0.1)',
+        <div style={{backgroundColor: 'black',
           position: 'absolute', 
-          height: '20%', 
+          height: '19%', 
           width: '55%', 
-          margin: '6% 6%',
+          margin: '5% 5%',
           zIndex: 0}}></div>
           <div style={{backgroundColor: 'rgba(192, 192, 192, 1.0)',
-            height: '20%', 
+            height: '19%', 
             position: 'absolute',
             width: '55%', 
-            margin: '5% 5%',
+            margin: '4% 4%',
             zIndex: 1}}>
-            <div id='NameHeading' style={{fontFamily: 'Georgia', padding: '5% 5%'}}>
+            <div style={{padding: '3% 5%'}}>
               {!this.canvLoaded && <canvas ref="canvas" style={{ display: 'none' }}></canvas>}
-              <h1 style={{ margin: '0 0', fontFamily: 'Georgia-Bold', fontWeight: 'bold',
-                padding: '0 0'}}>{this.state.name}</h1>
+              <h1 style={{ margin: '0 0',
+                padding: '0 0', fontSize: '35px'}}>{this.state.name}</h1>
                 <p style={{ background: 'none', padding: '0 0', margin: '0 0'}}>Phone: {this.state.phoneNum}</p>
                 {this.canvLoaded && 
                 <img src={this.iconsToConvert[0].icon} 
                     key={'img-' + 0} alt={this.iconsToConvert[0].alt} 
-                    style={{ position: 'absolute', height: 25, width: 25 }}/>}
-                  <p style={{ background: 'none', padding: '0 0', margin: '5px 0 0 30px'}}> {this.props.email}</p>
+                    style={{ position: 'absolute', top: '44%', height: 25, width: 25 }}/>}
+                  <p style={{ background: 'none', padding: '0 0', margin: '6px 0 0 30px'}}> {this.props.email}</p>
                 {this.canvLoaded && 
                 <img src={this.iconsToConvert[1].icon} 
                     key={'img-' + 1} alt={this.iconsToConvert[1].alt} 
-                    style={{ position: 'absolute', top: '63%', height: 25, width: 25 }}/>}
-                  <p style={{ background: 'none', padding: '0 0', margin: '8px 0 0 30px'}}>{this.props.github}</p>
+                    style={{ position: 'absolute', top: '61%', height: 25, width: 25 }}/>}
+                  <p style={{ background: 'none', padding: '0 0', margin: '9px 0 0 30px'}}>{this.props.github}</p>
                 {this.canvLoaded &&
                 <img src={this.iconsToConvert[2].icon} 
                     key={'img-' + 2} alt={this.iconsToConvert[2].alt} 
-                    style={{ position: 'absolute', top: '80%', height: 25, width: 25 }}/>}
-                  <p style={{ background: 'none', padding: '0 0', margin: '8px 0 0 30px'}}>{this.props.linkedIn}</p>
+                    style={{ position: 'absolute', top: '78%', height: 25, width: 25 }}/>}
+                  <p style={{ background: 'none', padding: '0 0', margin: '9px 0 0 30px'}}>{this.props.linkedIn}</p>
             </div>
-        </div>
+          </div>
+          <style>{styles}</style>
         </div>
       )
   }

@@ -4,6 +4,12 @@ import { PDFExport } from '@progress/kendo-react-pdf';
 import { defineFont } from '@progress/kendo-drawing/pdf'
 import myInfo from './myInfo'
 import NameHeading from './Components/NameHeading'
+import Education from './Components/Education'
+import LineSeparator from './Components/LineSeparator';
+import TechnicalSkills from './Components/TechnicalSkills'
+import WorkExperience from './Components/WorkExperience'
+import {styles} from './styles'
+import SoftSkills from './Components/SoftSkills';
 
 class Resume extends React.Component {
 
@@ -71,8 +77,14 @@ class Resume extends React.Component {
               overflowX: 'hidden',
               overflowY: 'hidden'}}>
             <NameHeading email={email} github={github} linkedIn={linkedIn}/>
+            <Education/>
+            <LineSeparator/>
+            <TechnicalSkills/>
+            <WorkExperience/>
+            <SoftSkills/>
           </div>
       </PDFExport>
+      <style>{styles}</style>
     </div>
       
     );

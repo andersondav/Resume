@@ -1,25 +1,6 @@
-@font-face {
-  font-family: 'Georgia';
-  src: local('Georgia'), url(./fonts/Georgia.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'Georgia-Bold';
-  src: local('Georgia-Bold'), url(./fonts/GeorgiaBold.ttf) format('truetype');
-}
-
 .App {
   width: 816px;
   height: 1056px;
   background: red;
+  font-family: 'Times New Roman', Times, serif;
 }
-
-/* #NameHeading {
-  font-family: 'Georgia';
-  font-size: 18px;
-}
-
-h1#NameHeading {
-  font-family: 'Georgia-Bold';
-  font-size: 25px;
-} */
