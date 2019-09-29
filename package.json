@@ -9,8 +9,13 @@
   "author": "Anderson David",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-brands-svg-icons": "^5.11.2",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "@progress/kendo-drawing": "^1.5.12",
     "@progress/kendo-react-pdf": "^3.4.1",
+    "canvg": "^2.0.0",
     "create-react-app": "^3.1.2"
   }
 }
