@@ -9,8 +9,8 @@ class LineSeparator extends React.Component {
         return (
             <div style={{position: 'absolute', 
             borderLeft: '1px solid black', 
-            height: '73%', 
-            top: '25%',
+            height: '75%', 
+            top: '23%',
             left: '30%'}}></div>
         )
     }

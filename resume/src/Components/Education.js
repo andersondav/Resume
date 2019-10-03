@@ -28,7 +28,7 @@ class Education extends React.Component {
                 <h1 style={{margin: '1% 3%', padding: '0 0'}}>Education</h1>
                 <p style={{margin: '0 3%'}}>{this.state.education.school}</p>
                 <p style={{margin: '0 3%'}}>({this.state.education.location})</p>
-                <ul style={{listStyleType: 'square', margin: '0 0'}}>
+                <ul style={{margin: '0 0'}}>
                     <li style={{margin: '1% 0 1% 0'}}>{this.state.education.degree}</li>
                     <li style={{margin: '1% 0 1% 0'}}>{this.state.education.degree2}</li>
                     <li style={{margin: '1% 0 1% 0'}}>GPA: {this.state.education.gpa}</li>

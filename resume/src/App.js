@@ -10,6 +10,11 @@ import TechnicalSkills from './Components/TechnicalSkills'
 import WorkExperience from './Components/WorkExperience'
 import {styles} from './styles'
 import SoftSkills from './Components/SoftSkills';
+import Objective from './Components/Objective'
+import Coursework from './Components/Coursework'
+import Projects from './Components/Projects'
+import MainSectionContainer from './Components/MainSectionContainer';
+import SideSectionContainer from './Components/SideSectionContainer';
 
 class Resume extends React.Component {
 
@@ -45,16 +50,30 @@ class Resume extends React.Component {
     let email;
     let github;
     let linkedIn;
+    var projectGithubs;
+    var projectLinks;
 
     if (!this.state.showLinks) {
         email = <p style={{ padding: '0 0', margin: '0 0'}}>{this.state.email}</p>
         github = <p style={{ padding: '0 0', margin: '0 0'}}>{this.state.github}</p>
         linkedIn = <p style={{ padding: '0 0', margin: '0 0'}}>{this.state.linkedIn}</p>
+        projectGithubs = this.state.projects.map((project, index) => {
+          return <p style={{ padding: '0 0', margin: '0 0'}}>{project.github}</p>
+        })
+        projectLinks = this.state.projects.map((project, index) => {
+          return <p style={{ padding: '0 0', margin: '0 0'}}>{project.link}</p>
+        })
     }
     else {
         email = <a style={{color: 'blue'}} href={`mailto:david25@purdue.edu`}>{this.state.email}</a>
-        github = <a style={{color: 'blue'}} target='_blank' href={'https://github.com/andersondav'}>{this.state.github}</a>
-        linkedIn = <a style={{color: 'blue'}} target='_blank' href={'https://linkedin.com/in/anderson-david/'}>{this.state.linkedIn}</a>
+        github = <a style={{color: 'blue'}} target='_blank' href={`https://${this.state.github}`}>{this.state.github}</a>
+        linkedIn = <a style={{color: 'blue'}} target='_blank' href={`https://${this.state.linkedIn}`}>{this.state.linkedIn}</a>
+        projectGithubs = this.state.projects.map((project, index) => {
+          return <a style={{color: 'blue'}} target='_blank' href={`${project.github}`}>{project.github}</a>
+        })
+        projectLinks = this.state.projects.map((project, index) => {
+          return <a style={{color: 'blue'}} target='_blank' href={`${project.link}`}>{project.link}</a>
+        })
     }
     return (
     <div>
@@ -79,9 +98,8 @@ class Resume extends React.Component {
             <NameHeading email={email} github={github} linkedIn={linkedIn}/>
             <Education/>
             <LineSeparator/>
-            <TechnicalSkills/>
-            <WorkExperience/>
-            <SoftSkills/>
+            <SideSectionContainer/>
+            <MainSectionContainer projectGithubs={projectGithubs} projectLinks={projectLinks}/>
           </div>
       </PDFExport>
       <style>{styles}</style>

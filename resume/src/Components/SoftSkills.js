@@ -12,13 +12,10 @@ class SoftSkills extends React.Component {
 
     render() {
         return (
-            <div style={{ width: '25%',  
-            margin: '4% 4%',
-            position: 'absolute',
-            top: '50%',
+            <div style={{margin: '4% 0',
             background: 'none'}}>
                 <h1 style={{margin: '0 0'}}>Soft Skills</h1>
-                <p style={{margin: '3% 0 0 0'}}>
+                <p style={{margin: '0 0 0 0'}}>
                     {this.state.softSkills.map((skill, index, arr) => {
                         if (index != arr.length - 1) {
                             return `${skill}, `
